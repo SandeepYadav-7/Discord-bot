@@ -7,7 +7,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 prefix_list = ["N.", "n.", "Nezuko", "nezuko"]
-bot = commands.Bot(command_prefix = prefix_list, description = "Still Development", case_insensitive=l = True, intents = intents)
+bot = commands.Bot(command_prefix = prefix_list, description = "Still Development", case_insensitive = True, intents = intents)
 
 @bot.command()
 @commands.is_owner()
