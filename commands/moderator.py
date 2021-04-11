@@ -6,7 +6,7 @@ class Modarator(commands.Cog):
 		self.bot = bot
 	
 	@commands.command(name = "clear", aliases = ["nuke", "delete"])
-	@commands.has permissions(administrator = True)
+	@commands.has_permissions(manage_messages)
 	async def clear(self, ctx, amount: int):
 		await ctx.channel.purge(limit = amount + 1)
 		await ctx.send(f"{amount} message(s) deleted.", delete_after = 5)
