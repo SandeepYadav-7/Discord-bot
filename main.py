@@ -3,13 +3,15 @@ from discord.ext import commands
 import os
 from keep_alive import keep_alive
 
-bot = commands.Bot(command_prefix "!", case_insensitive = True)
+intents = discord.Intents.default()
+intents.members = True
 
-@bot.command(name = "ping")
-async def ping(ctx):
-  msg = await ctx.send(f"hey {ctx.message.author.mention}, pong! latency")
-  await msg.edit(content = f"hey {ctx.message.author.mention}, pong! latency is {round(bot.latency * 1000)}ms")
-  
+prefix_list = ["N.", "n.", "Nezuko", "Nezuko ", "nezuko", "nezuko "]
+bot = commands.Bot(command_prefix = prefix_list, description = "Still Development", case_insensitive=l = True, intents = intents)
+
+for filename in os.listdir("./commands"):
+	if filename.endswith(".py") and filename != "__init__.py":
+		bot.load_extension(f'commands.{filename[:-3]}')
 
 keep_alive()
 bot.run(os.getenv("TOKEN"))
