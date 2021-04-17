@@ -12,7 +12,8 @@ bot = commands.Bot(
     command_prefix = prefix_list,
     case_insensitive = True,
     strip_after_prefix = True,
-    intents = intents
+    intents = intents,
+    description = "Still Development."
     # help_command = PrettyHelp()
     )
 
