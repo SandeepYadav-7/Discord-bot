@@ -53,7 +53,7 @@ async def reload_error(ctx, error):
 
 for filename in os.listdir("./commands"):
     if filename.endswith(".py") and filename != "__init__.py":
-        bot.load_extension(f"co
+        bot.load_extension(f"commands.{filename[:-3]}")
 
 
 keep_alive()
